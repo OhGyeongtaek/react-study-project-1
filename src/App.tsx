@@ -2,9 +2,18 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { API_BASE_URL } from './constants/api'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const fetchUsers = async () => {
+    const response = await fetch(`${API_BASE_URL}/exchange-rates`);
+    const data = await response.json();
+    console.log(data);
+  };
+
+  fetchUsers();
 
   return (
     <>
