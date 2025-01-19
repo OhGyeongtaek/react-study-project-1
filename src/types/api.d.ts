@@ -39,3 +39,17 @@ export interface TransactionsResponse {
   accountId: number;
   transactions: Transaction[];
 }
+
+// API 에러 타입
+export interface ApiError {
+  code: string;
+  message: string;
+  status: number;
+}
+
+// API 응답 타입
+export interface ApiResponse<T> {
+  data: T;
+  status: number;
+  message?: string;
+}
