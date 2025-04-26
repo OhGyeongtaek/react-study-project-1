@@ -6,7 +6,7 @@ export const useAccounts = () => {
     queryKey: ['accounts'],
     queryFn: async () => {
       const { data } = await getAccounts();
-      console.log(data);
+
       return data;
     },
   });
